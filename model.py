@@ -24,6 +24,9 @@ class Igra:
         return all(c in self.crke for c in self.geslo)
     
     def poraz(self):
+        return self.stevilo_napak() >= STEVILO_DOVOLJENIH_NAPAK
+
+    def previlni_del_gesla(self):
         pass
 
 
