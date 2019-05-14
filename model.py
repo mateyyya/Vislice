@@ -8,7 +8,7 @@ PORAZ = 'X'
 
 class Igra:
     def __init__(self, geslo):
-        self.geslo = geslo
+        self.geslo = geslo.upper()
         self.crke = []
 
     def napacne_crke(self):
@@ -26,15 +26,58 @@ class Igra:
     def poraz(self):
         return self.stevilo_napak() >= STEVILO_DOVOLJENIH_NAPAK
 
-    def previlni_del_gesla(self):
-        pass
+    def pravilni_del_gesla(self):
+        # return "".join(c if c in self.crke else '_' for c in selg.geslo)
+        novi = ''
+        for c in self.geslo:
+            if c in self.crke:
+                novi += c
+            else:
+                novi += '_'
+        return novi
+
+    def nepravili_ugibi(self):
+        return " ".join(self.napacne_crke())
+
+    def ugibaj(self, crka):
+        crka = crka.upper()
+        if crka in self.crke:
+            return PONOVLJENA_CRKA
+        if crka in self.geslo:
+            self.crke.append(crka)
+            if self.zmaga():
+                return ZMAGA
+            return PRAVILNA_CRKA
+        # potem je napačna neponovljena
+        self.crke.append(crka)
+        if self.poraz():
+            return PORAZ
+        else:
+            return NAPACNA_CRKA
+
+with open('naloga11/Vislice/besede.txt') as f:
+    bazen_besed = [beseda.strip() for beseda in f.readlines()]
+        
+print(bazen_besed[0])
+print(bazen_besed[-1])
 
 
-
-igra = Igra("nekaj")
-igra.crke = ['a', 'l', 'v', 'n', 'x', 'e', 'k', 'j']
-print(igra.napacne_crke())
-print(igra.pravilne_crke())
-print(igra.stevilo_napak())
-print(igra.zmaga())
-print(igra.poraz())
+# igra = Igra("nekaj")
+# igra.crke = ['A', 'L', 'V', 'N', 'X', 'E']
+# print(igra.napacne_crke())
+# print(igra.pravilne_crke())
+# print(igra.stevilo_napak())
+# print(igra.zmaga())
+# print(igra.poraz())
+# print(igra.pravilni_del_gesla())
+# print(igra.nepravili_ugibi())
+# print("ugibam k")
+# print(igra.ugibaj('k'))
+# print(igra.pravilni_del_gesla())
+# print(igra.nepravili_ugibi())
+# print("ugibam v")
+# print(igra.ugibaj('v'))
+# print(igra.pravilni_del_gesla())
+# print(igra.nepravili_ugibi())
+# print("ugibam f")
+# print(igra.ugibaj('f'))
