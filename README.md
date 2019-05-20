@@ -6,3 +6,7 @@ blah
 
 01234
 kul
+
+poskusne samostojne spremembe
+
+(ali pač) haha
