@@ -10,3 +10,5 @@ kul
 poskusne samostojne spremembe
 
 (ali pač) haha
+
+zelo uporabna stran :) https://git-scm.com
