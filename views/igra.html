@@ -17,11 +17,17 @@
         Nepravilni ugibi: {{igra.nepravilni_ugibi()}}
       </td>
       <td>
-        <img src="../img/{{igra.stevilo_napak()}}.jpg" alt="obesanje">
+        <img src="../../img/{{igra.stevilo_napak()}}.jpg" alt="obesanje">
       </td>
     </tr>
   </table>
-  img/{{igra.stevilo_napak}}.jpg
+
+  % if poskus == models.ZMAGA:
+
+  <form action="/igra/{{id_igre}}/" method="post">
+    Črka: <input type="text" name="crka">
+    <button type="submit">Pošlji ugib</button>
+  </form>
 
 </body>
 
