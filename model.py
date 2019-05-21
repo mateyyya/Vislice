@@ -60,8 +60,8 @@ class Igra:
         else:
             return NAPACNA_CRKA
 
-def nova_igra(self):
-    geslo = Igra(random.choice(bazen_besed))
+def nova_igra():
+    geslo = random.choice(bazen_besed)
     return Igra(geslo)
 
 # print(bazen_besed[0])

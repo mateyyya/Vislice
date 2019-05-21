@@ -3,7 +3,7 @@ import model
 
 # če je v isti mapi, končnica .py tako uvoziš vse funkcije iz tiste datoteke
 
-def zapis_igre(igra):
+def izpis_igre(igra):
     tekst = """
 Število preostalih poskusov: {0}
 Neuspeli poskusi: {1}
