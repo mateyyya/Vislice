@@ -9,7 +9,7 @@ ZACETEK = 'S'
 ZMAGA = 'W'
 PORAZ = 'X'
 
-with open('naloga11/Vislice/besede.txt') as f:
+with open('besede.txt') as f:
     bazen_besed = [beseda.strip() for beseda in f.readlines()]
 
 class Igra:
@@ -43,7 +43,7 @@ class Igra:
             novi += ' '
         return novi
 
-    def nepravili_ugibi(self):
+    def nepravilni_ugibi(self):
         return " ".join(self.napacne_crke())
 
     def ugibaj(self, crka):
@@ -79,7 +79,7 @@ class Vislice:
         return id
 
     def ugibaj(self, id_igre, crka):
-        igra, _ = self.igre(id_igre)
+        igra, _ = self.igre[id_igre]
         poskus = igra.ugibaj(crka)
         self.igre[id_igre] = (igra, poskus)
     

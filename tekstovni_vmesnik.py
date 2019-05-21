@@ -12,7 +12,7 @@ Napačne črke ({2}): {3}
         model.STEVILO_DOVOLJENIH_NAPAK - igra.stevilo_napak() + 1,
         igra.pravilni_del_gesla(),
         igra.stevilo_napak(),
-        igra.nepravili_ugibi()
+        igra.nepravilni_ugibi()
     )
     return tekst
 
