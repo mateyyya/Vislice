@@ -5,6 +5,7 @@ import bottle
 
 DATOTEKA_STANJA = 'stanje.json'
 DATOTEKA_Z_BESEDAMI = 'besede.txt'
+SKRIVNOST = 'psssst, moja skrivnost'
 
 vislice = model.Vislice(DATOTEKA_STANJA, DATOTEKA_Z_BESEDAMI)
 # id = vislice.nova_igra()
